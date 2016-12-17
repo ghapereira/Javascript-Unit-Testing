@@ -1,7 +1,6 @@
 'use strict';
 
-var test = require('unit.js'),
-    assert = require('assert');
+var assert = require('assert');
 
 describe('largestisland', function() {
   var testable = require('../largestisland.js'),
@@ -23,7 +22,15 @@ describe('largestisland', function() {
                    [0, 1, 1, 1, 1, 1, 0, 0, 0],
                    [0, 0, 0, 0, 0, 0, 0, 0, 0],
                    [0, 1, 1, 1, 0, 0, 0, 0, 0],
-                   [0, 1, 1, 1, 0, 0, 0, 0, 0]];
+                   [0, 1, 1, 1, 0, 0, 0, 0, 0]],
+    nullOcean = [[0, 0, 0, 0],
+                 [0, 0, 0, 0],
+                 [0, 0, 0, 0],
+                 [0, 0, 0, 0]],
+    allIsland = [[1, 1, 1, 1],
+                 [1, 1, 1, 1],
+                 [1, 1, 1, 1],
+                 [1, 1, 1, 1]];
 
   it('Main method returns integer value', function() {
     var thisIsland = JSON.parse(JSON.stringify(islandMap)),
@@ -55,6 +62,22 @@ describe('largestisland', function() {
                                                      thisIsland.length,
                                                      thisIsland[0].length);
     assert.equal(widestIslandValue, 11);
+  });
+
+  it('Behaves well with null matrix', function() {
+    var thisIsland = JSON.parse(JSON.stringify(nullOcean)),
+        widestIslandValue = testable.getWidestIsland(thisIsland,
+                                                     thisIsland.length,
+                                                     thisIsland[0].length);
+    assert.equal(widestIslandValue, 0);
+  });
+
+  it('Behaves well with complete matrix', function() {
+    var thisIsland = JSON.parse(JSON.stringify(allIsland)),
+        widestIslandValue = testable.getWidestIsland(thisIsland,
+                                                     thisIsland.length,
+                                                     thisIsland[0].length);
+    assert.equal(widestIslandValue, 16);
   });
 });
 
