@@ -26,7 +26,9 @@ the simplest things and found too much names to look at. And
 [in that](https://segment.com/blog/the-deep-roots-of-js-fatigue/).
 
 But since starting to work with it, my approach became to:
+
 a) Stick to the basics, and
+
 b) Just use the recommended tools, or the first you get on with good docs.
 
 This way, making this small project became very simple.
@@ -60,14 +62,19 @@ program with the tests.
 ## Commands
 For those who are not well acquainted with the state of Javascript at this
 moment, the way I did this was to:
+
 a) Have Node installed
+
 b) Have [npm](https://www.npmjs.com/) installed. ANOTHER NAME, I KNOW. That
 is the Node package manager. Just that
+
 c) Install Mocha: ```npm install -g mocha```. The '-g' stands for 'global install'.
 This is not the best practice, since one may want to only install it
 locally for a project, but I wanted to keep things simple on this one. I was
 already taking too much time on tooling instead of coding
+
 d) Install Istanbul: ```npm install -g istanbul```
+
 e) Just run: ```istanbul cover _mocha tests```
 
 
