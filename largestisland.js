@@ -50,10 +50,6 @@ function examineIsland(islandMap, i, j) {
         continue;
       }
 
-      if (thisCell === undefined) {
-        continue;
-      }
-
       if(thisCell === cellStates.FILLED_MARK) {
         neighboursCount += examineIsland(islandMap, xPosition, yPosition);
       }
